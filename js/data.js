@@ -1,91 +1,122 @@
 /* =========================================================
-   CONTENU DU PORTFOLIO — c'est ici que tu personnalises tout
+   CONTENU DU PORTFOLIO — tout ce qui est à personnaliser est ici
+   (remplace les textes d'exemple par les tiens)
    ========================================================= */
 
-const DATA = {
-  me: {
-    title: "Prénom Nom",
-    sub: "Sujet principal de l'enquête",
-    body: [
-      "Bienvenue dans mon dossier. Ici, chaque pièce est reliée aux autres : mon parcours, mes projets et mes compétences forment un tout cohérent.",
-      "Remplace ce texte par ta présentation personnelle."
-    ],
-    tags: ["Développeur·se", "Créatif·ve", "Curieux·se"]
-  },
-  about: {
-    title: "Profil",
-    sub: "Qui suis-je ?",
-    body: ["Décris ici qui tu es, ce qui te motive et ce que tu recherches (stage, alternance, emploi, missions freelance…)."],
-    tags: ["Rigueur", "Créativité", "Autonomie"]
-  },
-  p1: {
-    title: "Projet 1 — Site web",
-    sub: "Pièce à conviction n°1",
-    body: ["Décris le contexte, ton rôle, les défis rencontrés et le résultat obtenu."],
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: { label: "Voir le projet", href: "#" }
-  },
-  p2: {
-    title: "Projet 2 — Application",
-    sub: "Pièce à conviction n°2",
-    body: ["Décris ce projet : objectifs, technologies, ce que tu en as appris."],
-    tags: ["React", "API", "UX"],
-    link: { label: "Voir le projet", href: "#" }
-  },
-  p3: {
-    title: "Projet 3 — Identité visuelle",
-    sub: "Pièce à conviction n°3",
-    body: ["Logo, charte graphique, maquettes… présente ton travail de design."],
-    tags: ["Figma", "Branding", "Illustration"],
-    link: { label: "Voir le projet", href: "#" }
-  },
-  skills: {
-    title: "Compétences",
-    sub: "Dossier classé secret",
-    body: [
-      "Techniques : HTML, CSS, JavaScript, Git.",
-      "Design : Figma, UX/UI, typographie.",
-      "Humaines : communication, travail en équipe, gestion du temps."
-    ],
-    tags: ["Front-end", "Design", "Équipe"]
-  },
-  exp: {
-    title: "Expériences",
-    sub: "Historique des opérations",
-    body: [
-      "2025 — Poste / Entreprise : ce que tu y as fait.",
-      "2024 — Stage / Entreprise : missions principales.",
-      "Ajoute autant de lignes que nécessaire."
-    ],
-    tags: ["Stage", "Freelance"]
-  },
-  edu: {
-    title: "Formation",
-    sub: "Antécédents",
-    body: ["2023–2026 — Diplôme / École.", "2020–2023 — Diplôme / Établissement."],
-    tags: ["Diplômes", "Certifications"]
-  },
-  contact: {
-    title: "Contact",
-    sub: "Me joindre discrètement",
-    body: [
-      "Email : <a href='mailto:ton.email@exemple.fr'>ton.email@exemple.fr</a>",
-      "LinkedIn : <a href='#'>linkedin.com/in/ton-profil</a>",
-      "GitHub : <a href='#'>github.com/ton-profil</a>"
-    ],
-    tags: ["Disponible"]
-  },
-  hobby: {
-    title: "Hors-dossier",
-    sub: "Centres d'intérêt",
-    body: ["Photo, musique, sport, lecture… montre un peu de ta personnalité."],
-    tags: ["Cinéma", "Voyages", "Jeux"]
+const PROFILE = {
+  first: "Prénom",
+  last: "Nom",
+  name: "Prénom Nom",
+  role: "Graphiste · Motion designer",
+  seeking: "Alternance / stage — design graphique & motion",
+  photo: "assets/avatar.svg",
+  caption: "Le suspect"
+};
+
+/* ---- Planche / fiche signalétique ---- */
+const INFO = {
+  formation: [
+    { date: "2024 – 2027", text: "Bachelor Design graphique — École / Université" },
+    { date: "2021 – 2024", text: "Baccalauréat / BTS — Établissement" }
+  ],
+  parcours: [
+    { date: "2025", text: "Stage — Agence / Entreprise : missions principales" },
+    { date: "2024", text: "Projet freelance — Client : ce que tu as réalisé" }
+  ],
+  recherche: {
+    short: "Cherche une alternance !",
+    text: "Je recherche une alternance en design graphique et motion design, à partir de septembre. Prêt·e à relever un nouveau défi dans une équipe créative."
   }
 };
 
-/* Fils rouges : chaque paire relie deux éléments (ids de DATA) */
+/* ---- Post-its de qualités (3 à 5, un mot-clé chacun) ---- */
+const QUALITIES = [
+  { kw: "Créatif·ve",    text: "Je cherche toujours l'angle original, celui que personne n'a encore exploré." },
+  { kw: "Rigoureux·se",  text: "Alignements, détails, finitions : rien ne m'échappe avant la livraison." },
+  { kw: "Curieux·se",    text: "J'enquête, je teste de nouveaux outils et je creuse jusqu'à comprendre." },
+  { kw: "Persévérant·e", text: "Un problème tenace ne me fait pas peur : je ne lâche pas la piste." }
+];
+
+/* ---- Projets : un dossier par affaire ----
+   weapons = arme du crime (logiciels) · scene = scène de crime (visuel du rendu)
+   clue = indice retenu (compétence prouvée) */
+const PROJECTS = [
+  {
+    n: "01", tab: "Affaire 01", name: "Projet 1", color: "#e0533d", stamp: "CLASSÉ",
+    weapons: ["Photoshop", "Illustrator"],
+    scene: "assets/project-web.svg", sceneCaption: "scène de création",
+    summary: "Décris ici le contexte, ta mission, les contraintes et le résultat final de ce projet.",
+    clue: "Direction artistique & mise en page"
+  },
+  {
+    n: "02", tab: "Affaire 02", name: "Projet 2", color: "#2f7de1", stamp: "CLASSÉ",
+    weapons: ["After Effects", "Premiere Pro"],
+    scene: "assets/project-app.svg", sceneCaption: "scène de création",
+    summary: "Explique ce que tu as conçu, comment tu as procédé et ce que tu en as retiré.",
+    clue: "Animation & montage vidéo"
+  },
+  {
+    n: "03", tab: "Affaire 03", name: "Projet 3", color: "#d4a017", stamp: "CLASSÉ",
+    weapons: ["Illustrator", "Figma"],
+    scene: "assets/project-identity.svg", sceneCaption: "scène de création",
+    summary: "Identité visuelle, logo, charte : présente ta démarche étape par étape.",
+    clue: "Création d'identité visuelle"
+  },
+  {
+    n: "04", tab: "Affaire bonus", name: "Affaire bonus", color: "#2e9e5b", stamp: "BONUS",
+    weapons: ["Au choix"],
+    scene: "assets/deco-1.svg", sceneCaption: "projet perso",
+    summary: "Un petit clin d'œil pour le recruteur qui est allé jusqu'au bout de la pile : un projet perso.",
+    clue: "Curiosité & envie de créer"
+  }
+];
+
+/* ---- Timeline (viseur de caméra) ---- */
+const TIMELINE = [
+  { date: "2021", title: "Début du parcours", text: "Entrée en formation, premières bases en design et en image." },
+  { date: "2022", title: "Premier projet", text: "Un premier projet concret qui confirme l'envie de faire de la création mon métier." },
+  { date: "2024", title: "Bachelor", text: "Intégration du cursus Design graphique : branding, motion, UX." },
+  { date: "2025", title: "Stage", text: "Mission en agence : production de visuels et d'animations pour des clients réels." },
+  { date: "2026", title: "Aujourd'hui", text: "À la recherche d'une alternance pour continuer à progresser sur le terrain." }
+];
+
+/* ---- Rapport d'expertise : compétences techniques ---- */
+const SKILLS = [
+  { name: "Photoshop",     level: 90, note: "Retouche, photomontage, textures" },
+  { name: "Illustrator",   level: 85, note: "Vectoriel, logos, illustrations" },
+  { name: "After Effects", level: 75, note: "Motion design, animation" },
+  { name: "Premiere Pro",  level: 70, note: "Montage vidéo" },
+  { name: "Figma",         level: 70, note: "Maquettes & prototypes" },
+  { name: "HTML / CSS",    level: 60, note: "Intégration web" }
+];
+
+/* ---- Contact (badge) ---- */
+const CONTACT = {
+  email: "prenom.nom@email.com",
+  linkedin: "linkedin.com/in/prenom-nom",
+  linkedinUrl: "https://www.linkedin.com/in/prenom-nom",
+  phone: "+33 6 00 00 00 00"
+};
+
+/* ---- Écran final : qui suis-je ---- */
+const FINAL = {
+  headline: "AFFAIRE RÉSOLUE",
+  bio: [
+    "Voilà, tu as retrouvé la personne derrière le dossier. Je m'appelle Prénom, je suis passionné·e par le design et l'image en mouvement.",
+    "Remplace ce texte par une courte présentation : ton parcours, ce qui te motive et ce que tu veux apporter à une équipe."
+  ],
+  facts: [
+    ["Âge", "22 ans"],
+    ["Ville", "Ville, France"],
+    ["Recherche", "Alternance"],
+    ["Signe particulier", "Toujours un café à côté"]
+  ]
+};
+
+/* ---- Fils rouges : chaque paire relie deux cartes (ids des éléments) ---- */
 const LINKS = [
-  ["me", "about"], ["me", "p1"], ["me", "p2"], ["me", "p3"], ["me", "skills"], ["me", "exp"],
-  ["about", "exp"], ["exp", "skills"], ["skills", "p3"], ["p1", "edu"], ["edu", "me"],
-  ["p1", "contact"], ["p2", "contact"], ["p2", "p3"], ["hobby", "skills"], ["hobby", "p3"]
+  ["c-me", "c-info"], ["c-me", "c-q0"], ["c-me", "c-q2"], ["c-me", "c-proj"],
+  ["c-me", "c-time"], ["c-me", "c-skills"],
+  ["c-info", "c-q0"], ["c-q0", "c-q1"], ["c-q2", "c-q3"],
+  ["c-q3", "c-proj"], ["c-proj", "c-skills"], ["c-info", "c-time"]
 ];
