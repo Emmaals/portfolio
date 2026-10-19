@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6b6b6b"/>
+      <stop offset="1" stop-color="#2b2b2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- silhouette d'enquêteur : chapeau + manteau -->
+  <path d="M60 400 C60 310 120 270 200 270 C280 270 340 310 340 400 Z" fill="#141414"/>
+  <path d="M170 262 L200 320 L230 262 Z" fill="#e8e2d0"/>
+  <ellipse cx="200" cy="190" rx="62" ry="72" fill="#1c1c1c"/>
+  <ellipse cx="200" cy="120" rx="125" ry="20" fill="#0d0d0d"/>
+  <path d="M142 118 C142 70 168 50 200 50 C232 50 258 70 258 118 Z" fill="#0d0d0d"/>
+  <rect x="142" y="104" width="116" height="14" fill="#c1121f"/>
+  <!-- points d'interrogation -->
+  <text x="200" y="215" text-anchor="middle" font-family="Georgia,serif" font-size="80" fill="#e8e2d0" opacity=".85">?</text>
+</svg>
